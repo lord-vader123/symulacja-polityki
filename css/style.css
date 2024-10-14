@@ -1,9 +1,13 @@
+* {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
 /* elementy wyśrodkowujące zawartość */
-body {
+body, .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
 body {
@@ -22,3 +26,8 @@ body {
     backdrop-filter: blur(5px);
 }
 
+.content {
+    background-color: #ADD8E6 ; /* ten kolor do zmiany */
+    padding: 1%;
+    border-radius: 2%;
+}
