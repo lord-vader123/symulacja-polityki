@@ -1,0 +1,33 @@
+* {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+/* elementy wyśrodkowujące zawartość */
+body, .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: url(../assets/background.jpg); /*źródło obrazu: https://bi.im-g.pl/im/48/e8/1c/z30312520AMP,Sala-obrad-Sejmu-w-dzien-po-wyborach-.jpg */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* rozmiar */
+
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+    backdrop-filter: blur(5px);
+}
+
+.content {
+    background-color: #ADD8E6 ; /* ten kolor do zmiany */
+    padding: 1%;
+    border-radius: 2%;
+}
