@@ -31,8 +31,11 @@ class User {
         if (!$id) {
             return;
         }
-
-
+        try {
+            $this->getDataFromDb($id);
+        } catch (Exception $e) {
+            die ("". $e->getMessage());
+        }
     }
 
     /**
@@ -55,5 +58,25 @@ class User {
         $this->data = $stmt->get_result()->fetch_assoc();
 
         return true;
+    }
+
+    /**
+     * Funkcja wstawiająca dane do bazy danych
+     * @throws \Exception Rzuca wyjątkiem w razie błędu
+     * @return bool Zwraca true, jeżeli wszystko poszło dobrze :D
+     */
+    public function insertDataToDb() : bool {
+        if (count($this->data) !== 2 ) {
+            throw new Exception("Błędna ilość argumentów");
+        }
+        
+        $stmt = $this->conn->prepare("INSERT INTO user(login, password) VALUES(?, ?)");
+        if (!$stmt) {
+            throw new Exception("Błąd podczas przygotowywania kwerendy");
+        }
+
+        $stmt->bind_param("ss", $this->data['login'], $this->data['password']);
+
+        return $stmt->execute();
     }
 }
