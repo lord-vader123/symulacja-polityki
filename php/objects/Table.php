@@ -1,8 +1,8 @@
 <?php
 
 abstract class Table {
-    private array $data;
-    private mysqli $conn;
+    protected array $data;
+    protected mysqli $conn;
 
     /**
      * Pobiera dwa argumenty, jeżeli parametr $id zostaje podany, to na jego podstawie pobiera dane z bazy danych do $data
