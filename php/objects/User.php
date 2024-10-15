@@ -1,9 +1,10 @@
 <?php
 
+include_once __DIR__ . './Table.php';
 /**
  * Objekt pozwalający na operowanie na tabeli "User" w bazie danych
  */
-class User {
+class User extends Table {
     /**
      * Tabela asocajcyjna zawierająca wszystkie kolumny tabeli User
      * @var array
@@ -16,35 +17,11 @@ class User {
      */
     private mysqli $conn;
 
-    /**
-     * Pobiera dwa argumenty, jeżeli parametr $id zostaje podany, to na jego podstawie pobiera dane z bazy danych do $data
-     * @param mysqli $conn
-     * @param mixed $id
-     */
     public function __construct(mysqli $conn, ?int $id = null) {
-        if (!$conn) {
-            die ("Nie podano połączenia z bazą danych");
-        }
-
-        $this->conn = $conn;
-
-        if (!$id) {
-            return;
-        }
-        try {
-            $this->getDataFromDb($id);
-        } catch (Exception $e) {
-            die ("". $e->getMessage());
-        }
+        parent::__construct($conn, $id);
     }
 
-    /**
-     * Funkcja pobierająca dane z bazy danych na podstawie podanego id
-     * @param int $id Id użytkownika
-     * @throws \Exception Rzuca wyjątkiem mówiącym o błędzie w zapytaniu
-     * @return bool Zwraca true, jeżeli wszystkie operacje zostały wykonane prawidłowo
-     */
-    private function getDataFromDb(int $id) : bool{
+    public function getDataFromDb(int $id) : bool{
         if (!$id && !isset($id)) {
             return false;
         } 
@@ -60,11 +37,6 @@ class User {
         return true;
     }
 
-    /**
-     * Funkcja wstawiająca dane do bazy danych
-     * @throws \Exception Rzuca wyjątkiem w razie błędu
-     * @return bool Zwraca true, jeżeli wszystko poszło dobrze :D
-     */
     public function insertDataToDb() : bool {
         if (count($this->data) !== 2 ) {
             throw new Exception("Błędna ilość argumentów");
@@ -78,13 +50,5 @@ class User {
         $stmt->bind_param("ss", $this->data['login'], $this->data['password']);
 
         return $stmt->execute();
-    }
-
-    public function setData(array $data) : void {
-        $this->data = $data;
-    }
-
-    public function getData() : array {
-        return $this->data;
     }
 }
