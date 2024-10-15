@@ -22,6 +22,17 @@ class Polityk extends Table {
     }
 
     public function insertDataToDb(): bool {
+        if (count($this->data) !== 5 ) {
+            throw new Exception("Błędna ilość argumentów");
+        }
         
+        $stmt = $this->conn->prepare("INSERT INTO polityk(imie, nazwisko, partia_id, poparcie, zdjecie_src) VALUES(?, ?, ?, ?, ?)");
+        if (!$stmt) {
+            throw new Exception("Błąd podczas przygotowywania kwerendy");
+        }
+        $poparcie = rand(0,100);
+        $stmt->bind_param("ssiis", $this->data['imie'], $this->data['nazwisko'], $this->data['partia_id'], $poparcie, $this->data['zdjecie_src']);
+
+        return $stmt->execute();
     }
 }
