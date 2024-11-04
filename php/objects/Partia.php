@@ -30,7 +30,6 @@ class Partia extends Table {
         if (!$stmt) {
             throw new Exception("Błąd podczas przygotowywania kwerendy");
         }
-        $poparcie = rand(0,100);
         $stmt->bind_param("sss", $this->data['nazwa'], $this->data['skrot'], $this->data['logo_src']);
 
         return $stmt->execute();
