@@ -5,7 +5,7 @@
 }
 
 /* elementy wyśrodkowujące zawartość */
-body, .content {
+.main, .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
