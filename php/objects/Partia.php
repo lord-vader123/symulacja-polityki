@@ -1,8 +1,9 @@
 <?php
+
 /**
- * Klasa do obsługi tabeli "Polityk" w bazie danych.
+ * Klasa do obsługi tabeli "Partia" w bazie danych.
  */
-class Polityk extends Table {
+class Partia extends Table {
     public function __construct(mysqli $conn, ?int $id = null) {
         parent::__construct($conn, $id);
     }
@@ -12,7 +13,7 @@ class Polityk extends Table {
             return false;
         } 
 
-        $stmt = $this->conn->prepare("SELECT * FROM polityk WHERE id = ?");
+        $stmt = $this->conn->prepare("SELECT * FROM partia WHERE id = ?");
         $stmt->bind_param("i", $id);
         if (!$stmt->execute()) {
             throw new Exception("Błąd podczas pobierania danych z bazy danych");
@@ -23,16 +24,15 @@ class Polityk extends Table {
     }
 
     public function insertDataToDb(): bool {
-        if (count($this->data) !== 5 ) {
+        if (count($this->data) !== 3 ) {
             throw new Exception("Błędna ilość argumentów");
         }
         
-        $stmt = $this->conn->prepare("INSERT INTO polityk(imie, nazwisko, partia_id, poparcie, zdjecie_src) VALUES(?, ?, ?, ?, ?)");
+        $stmt = $this->conn->prepare("INSERT INTO partia(nazwa, skrot, logo_src) VALUES(?, ?, ?)");
         if (!$stmt) {
             throw new Exception("Błąd podczas przygotowywania kwerendy");
         }
-        $poparcie = rand(0,100);
-        $stmt->bind_param("ssiis", $this->data['imie'], $this->data['nazwisko'], $this->data['partia_id'], $poparcie, $this->data['zdjecie_src']);
+        $stmt->bind_param("sss", $this->data['nazwa'], $this->data['skrot'], $this->data['logo_src']);
         return $stmt->execute();
     }
 }
