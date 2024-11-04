@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include_once __DIR__ . './snippets/header-logged.html'; ?>
+<?php include_once __DIR__ . './snippets/header.html'; ?>
 
 <div class="main">
     <div class="content">
