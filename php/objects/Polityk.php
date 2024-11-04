@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Klasa do obsługi tabeli "Polityk" w bazie danych.
+ */
 class Polityk extends Table {
     public function __construct(mysqli $conn, ?int $id = null) {
         parent::__construct($conn, $id);
@@ -17,7 +19,6 @@ class Polityk extends Table {
         }
         
         $this->data = $stmt->get_result()->fetch_assoc();
-
         return true;
     }
 
@@ -32,7 +33,6 @@ class Polityk extends Table {
         }
         $poparcie = rand(0,100);
         $stmt->bind_param("ssiis", $this->data['imie'], $this->data['nazwisko'], $this->data['partia_id'], $poparcie, $this->data['zdjecie_src']);
-
         return $stmt->execute();
     }
 }

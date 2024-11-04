@@ -1,10 +1,19 @@
 <?php
-
+/**
+ * Klasa do obsługi tabeli "Komitet" w bazie danych.
+ */
 class Komitet extends Table {
     public function __construct(mysqli $conn, ?int $id = null) {
         parent::__construct($conn, $id);
     }
 
+    /**
+     * Pobiera dane komitetu na podstawie ID z bazy danych.
+     *
+     * @param int $id ID komitetu.
+     * @return bool True, jeśli operacja się powiodła.
+     * @throws \Exception Wyjątek, jeśli wystąpił błąd w zapytaniu.
+     */
     public function getDataFromDb(int $id): bool {
         if (!$id && !isset($id)) {
             return false;
@@ -17,10 +26,15 @@ class Komitet extends Table {
         }
         
         $this->data = $stmt->get_result()->fetch_assoc();
-
         return true;
     }
 
+    /**
+     * Wstawia dane komitetu do bazy danych.
+     *
+     * @return bool True, jeśli operacja się powiodła.
+     * @throws \Exception Wyjątek, jeśli wystąpił błąd w zapytaniu.
+     */
     public function insertDataToDb(): bool {
         if (count($this->data) !== 5 ) {
             throw new Exception("Błędna ilość argumentów");
@@ -31,7 +45,6 @@ class Komitet extends Table {
             throw new Exception("Błąd podczas przygotowywania kwerendy");
         }
         $stmt->bind_param("ss", $this->data['nazwa'], $this->data['partia_id']);
-
         return $stmt->execute();
     }
 }

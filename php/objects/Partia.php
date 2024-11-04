@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Klasa do obsługi tabeli "Partia" w bazie danych.
+ */
 class Partia extends Table {
     public function __construct(mysqli $conn, ?int $id = null) {
         parent::__construct($conn, $id);
@@ -17,7 +20,6 @@ class Partia extends Table {
         }
         
         $this->data = $stmt->get_result()->fetch_assoc();
-
         return true;
     }
 
@@ -31,7 +33,6 @@ class Partia extends Table {
             throw new Exception("Błąd podczas przygotowywania kwerendy");
         }
         $stmt->bind_param("sss", $this->data['nazwa'], $this->data['skrot'], $this->data['logo_src']);
-
         return $stmt->execute();
     }
 }
