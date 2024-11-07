@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<?php include_once '../snippets/header-logged.html'; ?>
 <div class="content">
             <label for="nazwa">nazwa partii</label>
             <input type="text" name="nazwa" id="nazwa">

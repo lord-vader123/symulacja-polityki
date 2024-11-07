@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include_once __DIR__ . './snippets/header.html'; ?>
+<?php include_once __DIR__ . '/snippets/header.html'; ?>
 
 <div class="main">
     <div class="content">
@@ -35,7 +35,7 @@
     </p>
     </div>
 
-    <?php include_once __DIR__ . './snippets/footer.html' ?>
+    <?php include_once __DIR__ . '/snippets/footer.html' ?>
 </div>
 </body>
 </html>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<?php include_once '../snippets/header.html'; ?>
     <div class="content">
         <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>">
             <label for="nazwa">login</label>
