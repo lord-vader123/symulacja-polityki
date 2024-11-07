@@ -11,7 +11,7 @@ Strona musi znajdować się w katalogu `$XAMPP_PATH/htdocs/symulacja-polityki`, 
 
 - poprawić image handle, bo nie działa
 
-- obsłużyć komitet i partie
+- poprawić komitet i partię | ogarnąć obrazki
 
 - ogarnąć jakiś przykładowy tekst do <main>, itp…
 
