@@ -8,3 +8,7 @@ Strona musi znajdować się w katalogu `$XAMPP_PATH/htdocs/symulacja-polityki`, 
 - przejrzeć pliki, sprawdzić czy wszędzie jest zaimportowany pasek
 
 - poprawić ścieżki do i w pasku (zamiast `/` powinno być `/symulacja-polityki`);
+
+- poprawić image handle, bo nie działa
+
+- obsłużyć komitet i partie
