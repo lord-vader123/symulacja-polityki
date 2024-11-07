@@ -1,3 +1,11 @@
+<?php
+
+if (!isset($_COOKIE['login']) && !isset($_COOKIE['password'])) {
+    header("Location: /symulacja-polityki/index.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

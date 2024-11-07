@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
+    header("Location: ./dashboard.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
