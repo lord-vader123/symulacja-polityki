@@ -1,6 +1,6 @@
 function notLogged(event) {
     event.preventDefault();
-    if (window.location.href = "/symulacja-polityki/forms/user.php") {
+    if (window.location.href === "http://127.0.0.1/symulacja-polityki/forms/user.php") {
         alert("Musisz się zalogować, by uzyskać dostęp do tej funkcji");
         console.log("Już tu jestem hehehhe");
         return;
