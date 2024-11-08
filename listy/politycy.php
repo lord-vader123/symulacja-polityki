@@ -44,6 +44,8 @@ include_once __DIR__ . '/../php/login-database.php';
                     $path = substr($zdjecie_src, $imgPos);
                 }
 
+                $path = str_replace('\\', '/', $path);
+
                 echo "<tr> <td>";
                 echo '<img src="' . $path . '" alt="Zdjęcie polityka">';
                 echo "</td> <td>";

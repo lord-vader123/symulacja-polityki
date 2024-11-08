@@ -77,6 +77,8 @@ $top_politician = $top_politician_result->fetch_assoc();
                         $logo = substr($logo, $imgPos);
                     }
 
+                    $logo = str_replace('\\', '/', $logo);
+
                     echo '<tr>
                             <td> <img src="' . $logo . '" alt="logo partii"</td>
                             <td>' . $row['nazwa'] . '</td>
