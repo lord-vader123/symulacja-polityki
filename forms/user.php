@@ -16,7 +16,7 @@ include_once __DIR__ . '/../php/objects/User.php';
 
 <body>
     <?php include_once '../snippets/header.html'; ?>
-    <<<<<<< HEAD <main>
+    <main>
         <div class="content">
             <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <label for="nazwa">login</label>
@@ -24,6 +24,8 @@ include_once __DIR__ . '/../php/objects/User.php';
                 <label for="pasword">hasło</label>
                 <input type="password" name="pasword" id="pasword">
                 <button type="submit">zaloguj</button>
+                <p><a href="/symulacja-polityki/forms/user-registration.php">Nie mam jeszcze konta, chcę je założyć</a>
+                </p>
             </form>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,7 +47,7 @@ include_once __DIR__ . '/../php/objects/User.php';
             }
             ?>
         </div>
-        </main>
+    </main>
 </body>
 
 </html>
