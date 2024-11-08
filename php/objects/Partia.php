@@ -1,5 +1,7 @@
 <?php
 
+include_once __DIR__ . '/Table.php';
+
 /**
  * Klasa do obsługi tabeli "Partia" w bazie danych.
  */
