@@ -43,7 +43,7 @@ CREATE TABLE `partia` (
   `id` int(11) NOT NULL,
   `nazwa` varchar(100) NOT NULL,
   `skrot` varchar(6) NOT NULL,
-  `logo_src` varchar(100) NOT NULL
+  `logo_src` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
