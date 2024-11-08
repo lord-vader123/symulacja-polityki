@@ -28,7 +28,6 @@ include_once __DIR__ . '/../php/objects/ImageHandler.php';
             <button type="submit">tu zatwierdź</button>
             <?php
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                echo "HA: " . $_FILES['logo_src']['tmp_name'] . "<br>";
                 $dirPath = __DIR__ . '/../assets/user_images/partia/';
                 $ih = new ImageHandler($dirPath, $_FILES['logo_src']);
                 $ih->saveFile();
