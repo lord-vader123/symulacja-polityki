@@ -50,3 +50,46 @@ body {
     border-radius: 2%;
     border: solid pink;
 }
+
+input {
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    border: 2px solid transparent;
+    outline: none;
+}
+
+input:focus, input:hover {
+    background-color: lightcyan;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: lightblue;
+}
+
+input:focus {
+    background-color: lightcyan;
+}
+
+button {
+    border-radius: 5px;
+    background-color: whitesmoke;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover, button:focus {
+    background-color: lightcyan;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: lightblue;
+}
+
+::-webkit-file-upload-button {
+   display: none;
+}
