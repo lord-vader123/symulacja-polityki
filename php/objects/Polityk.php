@@ -28,7 +28,7 @@ class Polityk extends Table
 
     public function insertDataToDb(): bool
     {
-        if (count($this->data) !== 5) {
+        if (count($this->data) !== 4) {
             throw new Exception("Błędna ilość argumentów");
         }
 

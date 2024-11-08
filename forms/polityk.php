@@ -21,6 +21,7 @@ include_once __DIR__ . '/../php/login-database.php';
     <div class="content">
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
             enctype="multipart/form-data">
+
             <label for="imie">Imię</label>
             <input type="text" name="imie" id="imie" required>
             <label for="nazwisko">Nazwisko</label>
@@ -44,7 +45,9 @@ include_once __DIR__ . '/../php/login-database.php';
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             try {
                 // Utworzenie obiektu `ImageHandler` i zapis obrazu
-                $ih = new ImageHandler("polityk", $_FILES['zdjecie_src']);
+                $dirName = __DIR__ . '/../assets/user_images/polityk/';
+                $zdjecie_src = null;
+                $ih = new ImageHandler($dirName, $_FILES['zdjecie_src']);
                 if ($ih->saveFile()) {
                     $zdjecie_src = $ih->getFinalPath();
                 } else {
