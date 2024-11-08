@@ -30,21 +30,31 @@ include_once __DIR__ . '/../php/objects/User.php';
             </form>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $continue = true;
                 $stmt = $conn->prepare("SELECT id FROM user WHERE login = ? AND password = ? ");
                 $stmt->bind_param("ss", $_POST['nazwa'], $_POST['pasword']);
                 $stmt->execute();
-                $result = $stmt->get_result()->fetch_assoc();
-
-                $user = new User($conn, $result['id']);
-                $data = $user->getData();
-                if (count($data) > 0) {
-                    setcookie("login", $data['login'], time() + 3600, "/");
-                    setcookie("password", $data['password'], time() + 3600, "/");
-                    header("Location: /symulacja-polityki/dashboard.php");
-                    exit();
-                } else {
-                    echo "Bład xd";
+                $result = $stmt->get_result();
+                if ($result->num_rows < 1) {
+                    echo "Dane są niepoprawne";
+                    $continue = false;
                 }
+                if ($continue) {
+                    $result = $result->fetch_assoc();
+
+                    $user = new User($conn, $result['id']);
+                    $data = $user->getData();
+                    if (count($data) > 0) {
+                        setcookie("login", $data['login'], time() + 3600, "/");
+                        setcookie("password", $data['password'], time() + 3600, "/");
+                        header("Location: /symulacja-polityki/dashboard.php");
+                        exit();
+                    } else {
+                        echo "Bład xd";
+                    }
+
+                }
+                $stmt->close();
             }
             ?>
         </div>
