@@ -13,8 +13,10 @@ include_once __DIR__ . '/../php/objects/Komitet.php';
 </head>
 
 <body>
+
+    <?php include_once '../snippets/header-logged.html'; ?>
     <div class="content">
-        <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <label for="nazwa">nazwa komitetu</label>
             <input type="text" name="nazwa" id="nazwa">
             <label for="partia_id">nazwa partii</label>

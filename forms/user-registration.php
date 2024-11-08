@@ -13,6 +13,7 @@ include_once __DIR__ . '/../php/objects/User.php';
 </head>
 
 <body>
+<?php include_once '../snippets/header.html'; ?>
     <div class="content">
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <label for="nazwa">login</label>

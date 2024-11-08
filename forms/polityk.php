@@ -17,6 +17,7 @@ include_once __DIR__ . '/../php/login-database.php';
 </head>
 
 <body>
+    <?php include_once '../snippets/header-logged.html'; ?>
     <div class="content">
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
             enctype="multipart/form-data">

@@ -15,7 +15,8 @@ include_once __DIR__ . '/../php/objects/User.php';
 </head>
 
 <body>
-    <main>
+    <?php include_once '../snippets/header.html'; ?>
+    <<<<<<< HEAD <main>
         <div class="content">
             <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <label for="nazwa">login</label>
@@ -44,7 +45,7 @@ include_once __DIR__ . '/../php/objects/User.php';
             }
             ?>
         </div>
-    </main>
+        </main>
 </body>
 
 </html>

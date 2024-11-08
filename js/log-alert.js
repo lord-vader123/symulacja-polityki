@@ -6,4 +6,3 @@ function notLogged(event) {
         return;
     }
     console.log("Nie zapragnąłem zostać przeniesionym");
-}

@@ -13,6 +13,7 @@ include_once __DIR__ . '/../php/objects/Partia.php';
 </head>
 
 <body>
+    <?php include_once '../snippets/header-logged.html'; ?>
     <div class="content">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
             <label for="nazwa">nazwa partii</label>
