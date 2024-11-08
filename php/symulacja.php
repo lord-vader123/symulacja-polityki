@@ -34,6 +34,7 @@ $top_politician = $top_politician_result->fetch_assoc();
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/symulacja-polityki/assets/ikonka.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/symulacja-polityki/css/style.css">
     <title>Symulacja</title>
