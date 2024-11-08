@@ -5,11 +5,22 @@
 }
 
 /* elementy wyśrodkowujące zawartość */
-.main, .content {
+.main, .content, main, form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+main {
+    height: 80%;
+    background-color: aquamarine;
+}
+
+td > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
 }
 
 body {

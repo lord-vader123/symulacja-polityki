@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../css/style.css">
-
     <header>
         <div class="header_content">
           <div class="title">
@@ -11,38 +9,36 @@
     
         <div class="menu">
           <div class="menu_content">
-            <a href="/index.php">Strona Główna</a>
+            <a href="../index.php">Strona Główna</a>
     
           <div class="dropdown">
             <button class="dropbtn">Listy</button>
             <div class="dropdown-content">
-              <a href="about:blank">Lista Polityków</a>
-              <a href="about:blank">Lista Partii</a>
-              <a href="about:blank">Lista Komitetów</a>
+              <a href="/symulacja-polityki/listy/politycy.php">Lista Polityków</a>
+              <a href="/symulacja-polityki/listy/partie.php">Lista Partii</a>
             </div>
           </div>
     
           <div class="dropdown">
             <button class="dropbtn">Narzędzia</button>
             <div class="dropdown-content">
-              <a href="php/login.php" onclick="notLogged()">Dodaj Polityka</a>
-              <a href="php/login.php" onclick="notLogged()">Dodaj Partie</a>
-              <a href="php/login.php" onclick="notLogged()">Dodaj Komitet</a>
+              <a href="/symulacja-polityki/forms/user.php" onclick="notLogged(event)">Dodaj Polityka</a>
+              <a href="/symulacja-polityki/forms/user.php" onclick="notLogged(event)">Dodaj Partie</a>
             </div>
           </div> 
     
           <div class="login">
             <div class="dropdown">
-              <img src="..//assets/login.png">
+              <img src="/symulacja-polityki/assets/login.png">
                 <div class="dropdown-content">
-                  <a href="/php/login.php">Zaloguj się</a>
-                  <a href="/php/registration.php">Zarejestruj się</a>
+                  <a href="/symulacja-polityki/forms/user.php">Zaloguj się</a>
+                  <a href="/symulacja-polityki/forms/user-registration.php">Zarejestruj się</a>
                 </div>
               </div>
           </div>
         </div>
 
-        <script src="../js/log-alert.js"></script>
+        <script src="/symulacja-polityki/js/log-alert.js"></script>
 
     </header>
     

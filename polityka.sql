@@ -24,18 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `komitet`
---
-
-CREATE TABLE `komitet` (
-  `id` int(11) NOT NULL,
-  `nazwa` varchar(100) NOT NULL,
-  `partia_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `partia`
 --
 
@@ -43,7 +31,7 @@ CREATE TABLE `partia` (
   `id` int(11) NOT NULL,
   `nazwa` varchar(100) NOT NULL,
   `skrot` varchar(6) NOT NULL,
-  `logo_src` varchar(100) NOT NULL
+  `logo_src` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -58,7 +46,7 @@ CREATE TABLE `polityk` (
   `nazwisko` varchar(40) NOT NULL,
   `partia_id` int(11) NOT NULL,
   `poparcie` int(11) NOT NULL,
-  `zdjecie_src` varchar(100) NOT NULL
+  `zdjecie_src` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -85,13 +73,6 @@ INSERT INTO `user` (`id`, `login`, `password`) VALUES
 --
 
 --
--- Indeksy dla tabeli `komitet`
---
-ALTER TABLE `komitet`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `partia_id` (`partia_id`);
-
---
 -- Indeksy dla tabeli `partia`
 --
 ALTER TABLE `partia`
@@ -115,12 +96,6 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `komitet`
---
-ALTER TABLE `komitet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `partia`
 --
 ALTER TABLE `partia`
@@ -141,12 +116,6 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `komitet`
---
-ALTER TABLE `komitet`
-  ADD CONSTRAINT `komitet_ibfk_1` FOREIGN KEY (`partia_id`) REFERENCES `partia` (`id`);
 
 --
 -- Constraints for table `polityk`
