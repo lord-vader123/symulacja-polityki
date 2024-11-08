@@ -32,17 +32,18 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['password'])) {
 
             <p>
             <h2>
-                Zapytasz pewnie: a co tu się robi? Już śpieszę z wyjaśnieniem!
+                Skoro trafiłeś/aś na tą stronę to pewnie interesujesz się polityką
+                <p>oraz zapewne ciekawi Cię co tu można zróbić więc już śpieszę z pomocą!
             </h2>
             <ul>
-                <li>Tworzysz się konto</li>
-                <li>Loguje się na nie</li>
-                <li>Tworzy się swoją partie, swoich polityków i komitet wyborczy</li>
-                <li>Przeprowadza się symulację wyborów</li>
+                <li>Tworzysz konto</li>
+                <li>Logujesz się</li>
+                <li>Tworzysz swoją partie, swoich polityków i komitet wyborczy</li>
+                <li>Teraz możesz się pobawić w symulacje wyborów!</li>
             </ul>
             </p>
             <p>
-                Liczymy na to, że będziesz się dobrze bawił!
+                Liczymy na to, że zobaczymy cie na liście! :)
             </p>
         </div>
 
