@@ -71,7 +71,7 @@ $top_politician = $top_politician_result->fetch_assoc();
 
                     $separator = (strpos(PHP_OS, 'WIN') === 0) ? '\\' : '/';  // Sprawdzamy system, czy Windows czy Linux
                 
-                    $imgPos = strpos($zdjecie_src, $separator . 'symulacja-polityki');  // Zmieniamy separator
+                    $imgPos = strpos($logo, $separator . 'symulacja-polityki');  // Zmieniamy separator
                 
                     if ($imgPos !== false) {
                         $logo = substr($logo, $imgPos);
