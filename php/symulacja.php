@@ -68,8 +68,11 @@ $top_politician = $top_politician_result->fetch_assoc();
                 while ($row = $result->fetch_assoc()) {
                     $poparcie_percent = round(($row['poparcie_partii'] / $total_poparcie) * 100, 2);
                     $logo = $row['logo_src'];
-                    $imgPos = strpos($logo, '/symulacja-polityki');
 
+                    $separator = (strpos(PHP_OS, 'WIN') === 0) ? '\\' : '/';  // Sprawdzamy system, czy Windows czy Linux
+                
+                    $imgPos = strpos($zdjecie_src, $separator . 'symulacja-polityki');  // Zmieniamy separator
+                
                     if ($imgPos !== false) {
                         $logo = substr($logo, $imgPos);
                     }

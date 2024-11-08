@@ -35,8 +35,11 @@ include_once __DIR__ . '/../php/login-database.php';
             while ($row = $result->fetch_assoc()) {
 
                 $zdjecie_src = $row['zdjecie_src'];
-                $imgPos = strpos($zdjecie_src, '/symulacja-polityki');
 
+                $separator = (strpos(PHP_OS, 'WIN') === 0) ? '\\' : '/';  // Sprawdzamy system, czy Windows czy Linux
+            
+                $imgPos = strpos($zdjecie_src, $separator . 'symulacja-polityki');  // Zmieniamy separator
+            
                 if ($imgPos !== false) {
                     $path = substr($zdjecie_src, $imgPos);
                 }
